@@ -1,6 +1,6 @@
 {
-  "name": "@luaswap/uikits",
-  "version": "0.34.0",
+  "name": "@theodao/uikits",
+  "version": "0.1.0",
   "description": "Set of UI components for projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
