@@ -25,6 +25,7 @@ const useProps = () => {
     logout: noop,
     isDark: false,
     toggleTheme: noop,
+    chainId: 1,
     langs,
     setLang: noop,
     currentLang: "EN",
@@ -40,6 +41,7 @@ const useProps = () => {
         login: noop,
         logout: noop,
         isDark: false,
+        chainId: 1,
         toggleTheme: noop,
         langs,
         setLang: noop,
@@ -90,6 +92,7 @@ export const NotConnected: React.FC = () => {
     <BrowserRouter>
       <Menu
         account={null}
+        chainId={77}
         login={noop}
         logout={noop}
         isDark

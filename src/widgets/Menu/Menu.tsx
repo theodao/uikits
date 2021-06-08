@@ -9,11 +9,32 @@ import Panel from "./components/Panel";
 import UserBlock from "./components/UserBlock";
 import { NavProps } from "./types";
 import Avatar from "./components/Avatar";
-import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL, NETWORK_LABELS } from "./config";
 
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+`;
+
+export const YellowCard = styled.div`
+  box-sizing: border-box;
+  margin: 0px 5px 0px 0px;
+  background-color: rgba(243, 132, 30, 0.05);
+  color: rgb(243, 132, 30);
+  font-weight: 600;
+  border-radius: 16px;
+  padding: 8px 16px;
+  transition: background-color 0.2s, opacity 0.2s;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.65;
+  }
+
+  &:active {
+    opacity: 0.85;
+    transform: translateY(1px);
+    box-shadow: none;
+  }
 `;
 
 const StyledNav = styled.nav<{ showMenu: boolean }>`
@@ -67,6 +88,7 @@ const Menu: React.FC<NavProps> = ({
   logout,
   isDark,
   toggleTheme,
+  chainId,
   langs,
   setLang,
   currentLang,
@@ -123,6 +145,7 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex>
+          {account && <YellowCard>{NETWORK_LABELS[chainId]}</YellowCard>}
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
         </Flex>

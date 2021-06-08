@@ -15,6 +15,28 @@ export const status = {
   },
 };
 
+export enum ChainId {
+  MAINNET = 1,
+  ROPSTEN = 3,
+  RINKEBY = 4,
+  GÖRLI = 5,
+  KOVAN = 42,
+  TOMOCHAIN_DEVNET = 99,
+  TOMOCHAIN_TESTNET = 89,
+  TOMOCHAIN_MAINNET = 88
+}
+
+export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
+  [ChainId.MAINNET]: 'Ethereum',
+  [ChainId.RINKEBY]: 'Rinkeby',
+  [ChainId.ROPSTEN]: 'Ropsten',
+  [ChainId.GÖRLI]: 'Görli',
+  [ChainId.KOVAN]: 'Kovan',
+  [ChainId.TOMOCHAIN_MAINNET]: 'TomoChain',
+  [ChainId.TOMOCHAIN_DEVNET]: 'TomoDevnet',
+  [ChainId.TOMOCHAIN_TESTNET]: 'TomoTestnet'
+}
+
 export const links = [
   {
     label: "Home",

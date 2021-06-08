@@ -1,5 +1,6 @@
 import { Colors } from "../../theme/types";
 import { Login } from "../WalletModal/types";
+import { ChainId } from './config'
 
 export interface Language {
   code: string;
@@ -60,5 +61,6 @@ export interface NavProps extends PanelProps {
   account?: string;
   login: Login;
   profile?: Profile;
+  chainId: ChainId;
   logout: () => void;
 }

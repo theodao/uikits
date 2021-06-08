@@ -12,7 +12,7 @@ export default {
 export const Default: React.FC = () => {
   return (
     <div>
-      <Dropdown target={<Button>Hover</Button>}>
+      <Dropdown target={<Button>Hover</Button>} position="bottom">
         {[...Array(30)].map(() => (
           <div>Content</div>
         ))}
