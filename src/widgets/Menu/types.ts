@@ -57,10 +57,20 @@ export interface PanelProps {
   links: Array<MenuEntry>;
 }
 
+export type NetworkOptions = {
+  name: string,
+  chainName: string
+  nativeCurrency: {
+    name: string,
+    symbol: string,
+    decimals: number,
+  }
+}
 export interface NavProps extends PanelProps {
   account?: string;
   login: Login;
   profile?: Profile;
   chainId: ChainId;
   logout: () => void;
+  connectNetwork: (chainId: number, options: NetworkOptions) => void;
 }

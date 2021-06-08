@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
+import { Dropdown } from "../../components/Dropdown";
 import Flex from "../../components/Box/Flex";
 import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./components/Logo";
@@ -9,11 +10,22 @@ import Panel from "./components/Panel";
 import UserBlock from "./components/UserBlock";
 import { NavProps } from "./types";
 import Avatar from "./components/Avatar";
-import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL, NETWORK_LABELS } from "./config";
+import {
+  MENU_HEIGHT,
+  SIDEBAR_WIDTH_REDUCED,
+  SIDEBAR_WIDTH_FULL,
+  NETWORK_LABELS,
+  supportedWalletOption,
+} from "./config";
 
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+`;
+
+const NetworkOption = styled.div`
+  cursor: pointer;
+  padding: 5px 0px;
 `;
 
 export const YellowCard = styled.div`
@@ -89,6 +101,7 @@ const Menu: React.FC<NavProps> = ({
   isDark,
   toggleTheme,
   chainId,
+  connectNetwork,
   langs,
   setLang,
   currentLang,
@@ -145,7 +158,13 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex>
-          {account && <YellowCard>{NETWORK_LABELS[chainId]}</YellowCard>}
+          <Dropdown target={<YellowCard>{NETWORK_LABELS[chainId]}</YellowCard>}>
+            {supportedWalletOption
+              .filter((option) => option.name !== NETWORK_LABELS[chainId])
+              .map((option) => {
+                return <NetworkOption onClick={() => connectNetwork(chainId, option)}>{option.name}</NetworkOption>;
+              })}
+          </Dropdown>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
         </Flex>

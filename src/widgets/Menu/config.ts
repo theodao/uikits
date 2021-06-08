@@ -1,4 +1,4 @@
-import { LinkStatus } from "./types";
+import { LinkStatus, NetworkOptions } from "./types";
 
 export const status = {
   LIVE: <LinkStatus>{
@@ -226,6 +226,27 @@ export const socials = [
     href: "https://twitter.com/pancakeswap",
   },
 ];
+
+export const supportedWalletOption: NetworkOptions[] = [
+  {
+    name: 'TomoChain',
+    chainName: 'Tomochain Main NetWork',
+    nativeCurrency: {
+      name: 'Tomo',
+      symbol: 'TOMO',
+      decimals: 18,
+    }
+  },
+  {
+    name: 'Ethereum',
+    chainName: 'Ethereum Main Network',
+    nativeCurrency: {
+      name: 'Ethereum',
+      symbol: 'ETH',
+      decimals: 18,
+    }
+  }
+]
 
 export const MENU_HEIGHT = 64;
 export const MENU_ENTRY_HEIGHT = 48;
