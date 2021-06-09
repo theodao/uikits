@@ -8,7 +8,7 @@ import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./components/Logo";
 import Panel from "./components/Panel";
 import UserBlock from "./components/UserBlock";
-import { NavProps } from "./types";
+import { NavProps, NetworkOption } from "./types";
 import Avatar from "./components/Avatar";
 import {
   MENU_HEIGHT,
@@ -16,6 +16,7 @@ import {
   SIDEBAR_WIDTH_FULL,
   NETWORK_LABELS,
   supportedWalletOption,
+  ChainId,
 } from "./config";
 
 const Wrapper = styled.div`
@@ -23,7 +24,7 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const NetworkOption = styled.div`
+const NetworkOptionStyle = styled.div`
   cursor: pointer;
   padding: 5px 0px;
 `;
@@ -101,6 +102,7 @@ const Menu: React.FC<NavProps> = ({
   isDark,
   toggleTheme,
   chainId,
+  queryChainId,
   connectNetwork,
   langs,
   setLang,
@@ -115,7 +117,6 @@ const Menu: React.FC<NavProps> = ({
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
-
   useEffect(() => {
     const handleScroll = () => {
       const currentOffset = window.pageYOffset;
@@ -145,6 +146,17 @@ const Menu: React.FC<NavProps> = ({
     };
   }, []);
 
+  const handleChooseNetwork = (option: NetworkOption) => {
+    if (chainId !== queryChainId && queryChainId) {
+      const queryOption = supportedWalletOption.find(opt => opt.chainId === queryChainId)
+      if (queryOption) {
+        connectNetwork(queryOption)
+      }
+      return
+    }
+    connectNetwork(option)
+  }
+
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
@@ -163,11 +175,11 @@ const Menu: React.FC<NavProps> = ({
               {supportedWalletOption
                 .filter((option) => option.name !== NETWORK_LABELS[chainId])
                 .map((option) => {
-                  return <NetworkOption onClick={() => connectNetwork(option)}>{option.name}</NetworkOption>;
+                  return <NetworkOptionStyle onClick={() => handleChooseNetwork(option)}>{option.name}</NetworkOptionStyle>;
                 })}
             </Dropdown>
           )}
-          <UserBlock account={account} login={login} logout={logout} />
+          <UserBlock account={account} login={login} logout={logout} chainId={chainId} queryChainId={queryChainId} />
           {profile && <Avatar profile={profile} />}
         </Flex>
       </StyledNav>

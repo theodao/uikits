@@ -1,4 +1,4 @@
-import { LinkStatus, NetworkOptions } from "./types";
+import { LinkStatus, NetworkOption } from "./types";
 
 export const status = {
   LIVE: <LinkStatus>{
@@ -227,7 +227,7 @@ export const socials = [
   },
 ];
 
-export const supportedWalletOption: NetworkOptions[] = [
+export const supportedWalletOption: NetworkOption[] = [
   {
     chainId: 88,
     name: 'TomoChain',

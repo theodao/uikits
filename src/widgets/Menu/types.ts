@@ -57,7 +57,7 @@ export interface PanelProps {
   links: Array<MenuEntry>;
 }
 
-export type NetworkOptions = {
+export type NetworkOption = {
   name: string,
   chainId: number,
   chainName: string
@@ -72,6 +72,7 @@ export interface NavProps extends PanelProps {
   login: Login;
   profile?: Profile;
   chainId: ChainId;
+  queryChainId: ChainId;
   logout: () => void;
-  connectNetwork: (options: NetworkOptions) => void;
+  connectNetwork: (option: NetworkOption) => void;
 }
