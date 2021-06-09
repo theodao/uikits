@@ -13,6 +13,10 @@ interface Props {
   href: string;
 }
 
+interface LogoTextProps {
+  isDark: boolean;
+}
+
 const blink = keyframes`
   0%,  100% { transform: scaleY(1); } 
   50% { transform:  scaleY(0.1); } 
@@ -31,7 +35,7 @@ const StyledLink = styled(Link)`
     width: 160px;
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
-      display: block;
+      display: flex;
     }
   }
   .right-eye {
@@ -48,12 +52,33 @@ const StyledLink = styled(Link)`
   }
 `;
 
+// @ts-ignore
+const LogoText = styled.span<LogoTextProps>`
+  margin-left: 10px;
+  font-size: 20px;
+  color: ${props => props.isDark ? "#FFFFFF" : "#000000"};
+  font-weight: bold;
+`
+const LuaIconWrapper = styled(Flex)`
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  :hover {
+    transform: rotate(-5deg);
+  }
+`
+
 const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
       <LogoIcon className="mobile-icon" />
-      <LogoWithText className="desktop-icon" isDark={isDark} />
+      <LuaIconWrapper className="desktop-icon" alignItems="center">
+        <LogoIcon />
+        <LogoText isDark={isDark} >
+          LuaSwap
+        </LogoText>
+      </LuaIconWrapper>
     </>
   );
 

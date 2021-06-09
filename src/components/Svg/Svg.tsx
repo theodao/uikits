@@ -27,6 +27,7 @@ const Svg = styled.svg<SvgProps>`
 Svg.defaultProps = {
   color: "text",
   width: "20px",
+  height: "20px",
   xmlns: "http://www.w3.org/2000/svg",
   spin: false,
 };
