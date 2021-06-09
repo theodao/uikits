@@ -75,4 +75,10 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, chainId, queryChai
   );
 };
 
-export default React.memo(UserBlock, (prevProps, nextProps) => prevProps.account === nextProps.account);
+export default React.memo(
+  UserBlock,
+  (prevProps, nextProps) =>
+    prevProps.account === nextProps.account &&
+    prevProps.queryChainId === nextProps.queryChainId &&
+    prevProps.chainId === nextProps.chainId
+);
