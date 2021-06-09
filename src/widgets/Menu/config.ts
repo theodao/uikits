@@ -229,6 +229,7 @@ export const socials = [
 
 export const supportedWalletOption: NetworkOptions[] = [
   {
+    chainId: 88,
     name: 'TomoChain',
     chainName: 'Tomochain Main NetWork',
     nativeCurrency: {
@@ -238,6 +239,7 @@ export const supportedWalletOption: NetworkOptions[] = [
     }
   },
   {
+    chainId: 1,
     name: 'Ethereum',
     chainName: 'Ethereum Main Network',
     nativeCurrency: {

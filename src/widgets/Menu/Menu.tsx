@@ -163,7 +163,7 @@ const Menu: React.FC<NavProps> = ({
               {supportedWalletOption
                 .filter((option) => option.name !== NETWORK_LABELS[chainId])
                 .map((option) => {
-                  return <NetworkOption onClick={() => connectNetwork(chainId, option)}>{option.name}</NetworkOption>;
+                  return <NetworkOption onClick={() => connectNetwork(option)}>{option.name}</NetworkOption>;
                 })}
             </Dropdown>
           )}

@@ -59,6 +59,7 @@ export interface PanelProps {
 
 export type NetworkOptions = {
   name: string,
+  chainId: number,
   chainName: string
   nativeCurrency: {
     name: string,
@@ -72,5 +73,5 @@ export interface NavProps extends PanelProps {
   profile?: Profile;
   chainId: ChainId;
   logout: () => void;
-  connectNetwork: (chainId: number, options: NetworkOptions) => void;
+  connectNetwork: (options: NetworkOptions) => void;
 }
