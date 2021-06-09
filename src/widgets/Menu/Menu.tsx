@@ -158,13 +158,15 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex>
-          <Dropdown target={<YellowCard>{NETWORK_LABELS[chainId]}</YellowCard>}>
-            {supportedWalletOption
-              .filter((option) => option.name !== NETWORK_LABELS[chainId])
-              .map((option) => {
-                return <NetworkOption onClick={() => connectNetwork(chainId, option)}>{option.name}</NetworkOption>;
-              })}
-          </Dropdown>
+          {account && (
+            <Dropdown target={<YellowCard>{NETWORK_LABELS[chainId]}</YellowCard>}>
+              {supportedWalletOption
+                .filter((option) => option.name !== NETWORK_LABELS[chainId])
+                .map((option) => {
+                  return <NetworkOption onClick={() => connectNetwork(chainId, option)}>{option.name}</NetworkOption>;
+                })}
+            </Dropdown>
+          )}
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
         </Flex>
