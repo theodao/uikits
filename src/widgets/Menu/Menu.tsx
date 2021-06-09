@@ -171,7 +171,7 @@ const Menu: React.FC<NavProps> = ({
         />
         <Flex>
           {account && (
-            <Dropdown target={<YellowCard>{NETWORK_LABELS[chainId]}</YellowCard>}>
+            <Dropdown target={<YellowCard>{queryChainId ? NETWORK_LABELS[queryChainId] : NETWORK_LABELS[chainId]}</YellowCard>}>
               {supportedWalletOption
                 .filter((option) => option.name !== NETWORK_LABELS[chainId])
                 .map((option) => {
