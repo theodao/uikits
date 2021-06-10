@@ -116,7 +116,6 @@ const Menu: React.FC<NavProps> = ({
   const isMobile = isXl === false;
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
-  const [isSameNetwork, setIsSameNetwork] = useState(false);
   const refPrevOffset = useRef(window.pageYOffset);
   useEffect(() => {
     const handleScroll = () => {
@@ -178,9 +177,9 @@ const Menu: React.FC<NavProps> = ({
         />
         <Flex>
           {account && (
-            <Dropdown target={<YellowCard>{queryChainId && !isSameNetwork ? NETWORK_LABELS[queryChainId] : NETWORK_LABELS[chainId]}</YellowCard>}>
+            <Dropdown target={<YellowCard>{NETWORK_LABELS[chainId]}</YellowCard>}>
               {supportedWalletOption
-                .filter((option) => option.name !== NETWORK_LABELS[queryChainId])
+                .filter((option) => option.name !== NETWORK_LABELS[chainId])
                 .map((option) => {
                   return <NetworkOptionStyle onClick={() => handleChooseNetwork(option)}>{option.name}</NetworkOptionStyle>;
                 })}
