@@ -154,13 +154,6 @@ const Menu: React.FC<NavProps> = ({
   }, [chainId, queryChainId])
 
   const handleChooseNetwork = (option: NetworkOption) => {
-    if (chainId !== queryChainId && queryChainId) {
-      const queryOption = supportedWalletOption.find(opt => opt.chainId === queryChainId)
-      if (queryOption) {
-        connectNetwork(queryOption)
-      }
-      return
-    }
     connectNetwork(option)
   }
 
