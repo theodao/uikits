@@ -48,13 +48,13 @@ const AccountElement = styled.div`
   padding: 0px 15px;
   cursor: unset;
   border-radius: 16px;
-  color: black;
+  color: ${({ theme }) => theme.colors.text};
   font-weight: 600;
   `
   
   const AccountButton = styled(Button)`
   cursor: pointer;
-  color: black;
+  color: ${({ theme }) => theme.colors.text};
   :hover {
     background-color: white;
     opacity: 1 !important;
@@ -85,8 +85,8 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, chainId, queryChai
       {account ? (
         chainId === queryChainId ? (
           <AccountElement>
-            {userEthBalance && <BalanceText>
-              {userEthBalance} {CurrenyMap[chainId]}
+            {1 && <BalanceText>
+              {1} {CurrenyMap[chainId]}
             </BalanceText>}
             <AccountButton
               scale="sm"
@@ -126,5 +126,6 @@ export default React.memo(
   (prevProps, nextProps) =>
     prevProps.account === nextProps.account &&
     prevProps.queryChainId === nextProps.queryChainId &&
-    prevProps.chainId === nextProps.chainId
+    prevProps.chainId === nextProps.chainId &&
+    prevProps.userEthBalance === nextProps.userEthBalance
 );

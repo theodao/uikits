@@ -155,8 +155,8 @@ const Menu: React.FC<NavProps> = ({
     //   }
     //   return
     // }
-    connectNetwork(option)
-  }
+    connectNetwork(option);
+  };
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
@@ -176,11 +176,20 @@ const Menu: React.FC<NavProps> = ({
               {supportedWalletOption
                 .filter((option) => option.name !== NETWORK_LABELS[chainId])
                 .map((option) => {
-                  return <NetworkOptionStyle onClick={() => handleChooseNetwork(option)}>{option.name}</NetworkOptionStyle>;
+                  return (
+                    <NetworkOptionStyle onClick={() => handleChooseNetwork(option)}>{option.name}</NetworkOptionStyle>
+                  );
                 })}
             </Dropdown>
           )}
-          <UserBlock account={account} login={login} logout={logout} chainId={chainId} queryChainId={queryChainId} userEthBalance={userEthBalance} />
+          <UserBlock
+            account={account}
+            login={login}
+            logout={logout}
+            chainId={chainId}
+            queryChainId={queryChainId}
+            userEthBalance={userEthBalance}
+          />
           {/* {profile && <Avatar profile={profile} />} */}
         </Flex>
       </StyledNav>
