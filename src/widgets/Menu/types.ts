@@ -74,5 +74,6 @@ export interface NavProps extends PanelProps {
   chainId: ChainId;
   queryChainId: ChainId;
   logout: () => void;
+  userEthBalance: number | string,
   connectNetwork: (option: NetworkOption) => void;
 }

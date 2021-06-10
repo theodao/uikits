@@ -109,6 +109,7 @@ const Menu: React.FC<NavProps> = ({
   currentLang,
   luaPriceUsd,
   links,
+  userEthBalance,
   profile,
   children,
 }) => {
@@ -179,8 +180,8 @@ const Menu: React.FC<NavProps> = ({
                 })}
             </Dropdown>
           )}
-          <UserBlock account={account} login={login} logout={logout} chainId={chainId} queryChainId={queryChainId} />
-          {profile && <Avatar profile={profile} />}
+          <UserBlock account={account} login={login} logout={logout} chainId={chainId} queryChainId={queryChainId} userEthBalance={userEthBalance} />
+          {/* {profile && <Avatar profile={profile} />} */}
         </Flex>
       </StyledNav>
       <BodyWrapper>

@@ -10,6 +10,7 @@ interface Props {
   logout: () => void;
   chainId: number;
   queryChainId: number;
+  userEthBalance: number | string;
 }
 
 const Web3StatusError = styled(Button)`
@@ -32,7 +33,47 @@ const Web3StatusError = styled(Button)`
   }
 `;
 
-const UserBlock: React.FC<Props> = ({ account, login, logout, chainId, queryChainId }) => {
+const AccountElement = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fbbb44;
+  border-radius: 16px;
+  white-space: nowrap;
+  width: 100%;
+  `;
+  
+  const BalanceText = styled.div`
+  background-color: #fbbb44;
+  padding: 0px 15px;
+  cursor: unset;
+  border-radius: 16px;
+  color: black;
+  font-weight: 600;
+  `
+  
+  const AccountButton = styled(Button)`
+  cursor: pointer;
+  color: black;
+  :hover {
+    background-color: white;
+    opacity: 1 !important;
+  }
+
+  :active {
+    opacity: 0.65;
+  }
+`
+interface CurrenyMapType {
+  [key: number]: string
+}
+
+const CurrenyMap: CurrenyMapType = {
+  88: "TOMO",
+  1: "ETH",
+}
+
+const UserBlock: React.FC<Props> = ({ account, login, logout, chainId, queryChainId, userEthBalance }) => {
   const { onPresentConnectModal, onPresentAccountModal, onPresentWrongNetworkModal } = useWalletModal(
     login,
     logout,
@@ -43,15 +84,20 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, chainId, queryChai
     <div>
       {account ? (
         chainId === queryChainId ? (
-          <Button
-            scale="sm"
-            variant="tertiary"
-            onClick={() => {
-              onPresentAccountModal();
-            }}
-          >
-            {accountEllipsis}
-          </Button>
+          <AccountElement>
+            {userEthBalance && <BalanceText>
+              {userEthBalance} {CurrenyMap[chainId]}
+            </BalanceText>}
+            <AccountButton
+              scale="sm"
+              variant="tertiary"
+              onClick={() => {
+                onPresentAccountModal();
+              }}
+            >
+              {accountEllipsis}
+            </AccountButton>
+          </AccountElement>
         ) : (
           <Web3StatusError
             onClick={() => {
