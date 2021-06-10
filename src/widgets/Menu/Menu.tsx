@@ -146,12 +146,6 @@ const Menu: React.FC<NavProps> = ({
     };
   }, []);
 
-  useEffect(() => {
-    if (chainId === queryChainId) {
-      setIsSameNetwork(true)
-    }
-  }, [chainId, queryChainId])
-
   const handleChooseNetwork = (option: NetworkOption) => {
     // if (chainId !== queryChainId && queryChainId) {
     //   const queryOption = supportedWalletOption.find(opt => opt.chainId === queryChainId)
