@@ -180,7 +180,7 @@ const Menu: React.FC<NavProps> = ({
           {account && (
             <Dropdown target={<YellowCard>{queryChainId && !isSameNetwork ? NETWORK_LABELS[queryChainId] : NETWORK_LABELS[chainId]}</YellowCard>}>
               {supportedWalletOption
-                .filter((option) => option.name !== NETWORK_LABELS[chainId])
+                .filter((option) => option.name !== NETWORK_LABELS[queryChainId])
                 .map((option) => {
                   return <NetworkOptionStyle onClick={() => handleChooseNetwork(option)}>{option.name}</NetworkOptionStyle>;
                 })}
