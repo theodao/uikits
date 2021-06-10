@@ -54,9 +54,10 @@ const AccountElement = styled.div`
   
   const AccountButton = styled(Button)`
   cursor: pointer;
+  z-index: 999;
   color: ${({ theme }) => theme.colors.text};
   :hover {
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.backgroundAlt};
     opacity: 1 !important;
   }
 
@@ -86,7 +87,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, chainId, queryChai
         chainId === queryChainId ? (
           <AccountElement>
             {1 && <BalanceText>
-              {1} {CurrenyMap[chainId]}
+              {userEthBalance} {CurrenyMap[chainId]}
             </BalanceText>}
             <AccountButton
               scale="sm"
