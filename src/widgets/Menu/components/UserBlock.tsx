@@ -11,6 +11,12 @@ interface Props {
   chainId: number;
   queryChainId: number;
   userEthBalance: number | string;
+  accountData: {
+    luaUnlockAble: string;
+    totalLuaLock: string;
+  };
+  unlockLua: () => Promise<null>;
+  isUnlock: boolean;
 }
 
 const Web3StatusError = styled(Button)`
@@ -41,18 +47,18 @@ const AccountElement = styled.div`
   border-radius: 16px;
   white-space: nowrap;
   width: 100%;
-  `;
-  
-  const BalanceText = styled.div`
+`;
+
+const BalanceText = styled.div`
   background-color: #fbbb44;
   padding: 0px 15px;
   cursor: unset;
   border-radius: 16px;
   color: ${({ theme }) => theme.colors.text};
   font-weight: 600;
-  `
-  
-  const AccountButton = styled(Button)`
+`;
+
+const AccountButton = styled(Button)`
   cursor: pointer;
   z-index: 999;
   color: ${({ theme }) => theme.colors.text};
@@ -64,21 +70,35 @@ const AccountElement = styled.div`
   :active {
     opacity: 0.65;
   }
-`
+`;
 interface CurrenyMapType {
-  [key: number]: string
+  [key: number]: string;
 }
 
 const CurrenyMap: CurrenyMapType = {
   88: "TOMO",
   1: "ETH",
-}
+};
 
-const UserBlock: React.FC<Props> = ({ account, login, logout, chainId, queryChainId, userEthBalance }) => {
+const UserBlock: React.FC<Props> = ({
+  account,
+  login,
+  logout,
+  chainId,
+  queryChainId,
+  userEthBalance,
+  accountData,
+  unlockLua,
+  isUnlock,
+}) => {
   const { onPresentConnectModal, onPresentAccountModal, onPresentWrongNetworkModal } = useWalletModal(
     login,
     logout,
-    account
+    account,
+    accountData,
+    chainId,
+    unlockLua,
+    isUnlock,
   );
   const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
   return (
@@ -86,9 +106,11 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, chainId, queryChai
       {account ? (
         chainId === queryChainId ? (
           <AccountElement>
-            {1 && <BalanceText>
-              {userEthBalance} {CurrenyMap[chainId]}
-            </BalanceText>}
+            {1 && (
+              <BalanceText>
+                {userEthBalance} {CurrenyMap[chainId]}
+              </BalanceText>
+            )}
             <AccountButton
               scale="sm"
               variant="tertiary"
@@ -122,11 +144,4 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, chainId, queryChai
   );
 };
 
-export default React.memo(
-  UserBlock,
-  (prevProps, nextProps) =>
-    prevProps.account === nextProps.account &&
-    prevProps.queryChainId === nextProps.queryChainId &&
-    prevProps.chainId === nextProps.chainId &&
-    prevProps.userEthBalance === nextProps.userEthBalance
-);
+export default UserBlock;

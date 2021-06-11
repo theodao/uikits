@@ -110,6 +110,9 @@ const Menu: React.FC<NavProps> = ({
   luaPriceUsd,
   links,
   userEthBalance,
+  accountData,
+  unlockLua,
+  isUnlock,
   profile,
   children,
 }) => {
@@ -189,6 +192,9 @@ const Menu: React.FC<NavProps> = ({
             chainId={chainId}
             queryChainId={queryChainId}
             userEthBalance={userEthBalance}
+            accountData={accountData}
+            unlockLua={unlockLua}
+            isUnlock={isUnlock}
           />
           {/* {profile && <Avatar profile={profile} />} */}
         </Flex>
