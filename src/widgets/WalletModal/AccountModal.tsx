@@ -18,7 +18,7 @@ interface Props {
     totalLuaLock: string;
   };
   chainId?: number;
-  unlockLua?: () => Promise<null>;
+  unlockLua?: () => null;
 }
 
 const Title = styled.div`
@@ -46,8 +46,6 @@ const AccountModal: React.FC<Props> = ({
 }) => {
   const isMainNet = chainId === 1;
   const { totalLuaLock, luaUnlockAble } = accountData;
-  console.log(unlockLua, "unlock function ?");
-  console.log(unlockLua(), "unlock function ?");
   return (
     <Modal title="Your wallet" onDismiss={onDismiss}>
       <Text
@@ -71,7 +69,7 @@ const AccountModal: React.FC<Props> = ({
           scale="sm"
           variant="secondary"
           disabled={!isMainNet || isUnlock}
-          onClick={unlockLua}
+          onClick={() => unlockLua()}
         >
           Unlock
         </Button>

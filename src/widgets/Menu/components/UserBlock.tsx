@@ -15,7 +15,7 @@ interface Props {
     luaUnlockAble: string;
     totalLuaLock: string;
   };
-  unlockLua: () => Promise<null>;
+  unlockLua: () => null;
   isUnlock: boolean;
 }
 

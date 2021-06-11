@@ -17,7 +17,7 @@ const useWalletModal = (
   account?: string,
   accountData?: { totalLuaLock: string; luaUnlockAble: string },
   chainId?: number,
-  unlockLua?: () => Promise<null>,
+  unlockLua?: () => null,
   isUnlock?: boolean,
 ): ReturnType => {
   const [onPresentConnectModal] = useModal(<ConnectModal login={login} />);

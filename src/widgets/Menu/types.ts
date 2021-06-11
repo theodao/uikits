@@ -78,7 +78,7 @@ export interface NavProps extends PanelProps {
     totalLuaLock: string;
   };
   logout: () => void;
-  unlockLua: () => Promise<null>;
+  unlockLua: () => null;
   userEthBalance: number | string;
   isUnlock: boolean;
   connectNetwork: (option: NetworkOption) => void;
