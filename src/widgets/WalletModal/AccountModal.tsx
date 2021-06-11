@@ -44,7 +44,7 @@ const AccountModal: React.FC<Props> = ({
   unlockLua = () => {},
   isUnlock,
 }) => {
-  const isMainNet = chainId !== 1;
+  const isMainNet = chainId === 1;
   const { totalLuaLock, luaUnlockAble } = accountData;
   console.log(unlockLua, "unlock function ?");
   return (
