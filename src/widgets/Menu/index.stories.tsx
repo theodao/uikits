@@ -32,6 +32,7 @@ const useProps = () => {
     currentLang: "EN",
     isUnlock: false,
     luaPriceUsd: 0.023158668932877668,
+    unlockLua: async() => { return 1},
     links,
     profile: null,
   });
@@ -47,6 +48,7 @@ const useProps = () => {
         queryChainId: 1,
         isUnlock: false,
         toggleTheme: noop,
+        unlockLua: async() => { return 1},
         langs,
         setLang: noop,
         currentLang: "EN",
