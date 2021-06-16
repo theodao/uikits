@@ -67,8 +67,13 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
             </Accordion>
           );
         }
+        console.log(location.pathname, "path name");
         return (
-          <MenuEntry key={entry.label} isActive={entry.href === '/' && location.pathname === '/' || location.pathname.includes(entry.href)} className={calloutClass}>
+          <MenuEntry
+            key={entry.label}
+            isActive={entry.href === "/" ? entry.href === location.pathname : location.pathname.includes(entry.href)}
+            className={calloutClass}
+          >
             <MenuLink href={entry.href} onClick={handleClick}>
               {iconElement}
               <LinkLabel isPushed={isPushed}>{entry.label}</LinkLabel>
