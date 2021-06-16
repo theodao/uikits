@@ -67,7 +67,6 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
             </Accordion>
           );
         }
-        console.log(location.pathname, "path name");
         return (
           <MenuEntry
             key={entry.label}
