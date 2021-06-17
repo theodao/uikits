@@ -78,7 +78,7 @@ const AccountModal: React.FC<Props> = ({
         {!isMainNet && <CommingSoon>Please switch to the Ethereum mainnet to unlock</CommingSoon>}
       </Flex>
       <Flex justifyContent="center">
-        <Button scale="sm" variant="primary" onClick={() => {}}>
+        <Button scale="sm" variant="primary" onClick={logout}>
           Logout
         </Button>
       </Flex>
