@@ -1,5 +1,5 @@
 import React from "react";
-import { ColorProps, StylesProps } from "styled-system";
+import { ColorProps } from "styled-system";
 
 export interface TabMenuProps {
   activeIndex?: number;
