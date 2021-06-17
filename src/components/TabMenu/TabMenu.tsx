@@ -17,7 +17,6 @@ const Wrapper = styled(Flex)`
 const Inner = styled(Flex)`
   justify-content: space-between;
   flex-grow: 1;
-
   & > button + button {
     margin-left: 4px;
   }
@@ -27,10 +26,10 @@ const Inner = styled(Flex)`
   }
 `;
 
-const ButtonMenu: React.FC<TabMenuProps> = ({ activeIndex = 0, onItemClick, children }) => {
+const ButtonMenu: React.FC<TabMenuProps> = ({ activeIndex = 0, onItemClick, children, innerStyle, wrapperStyle }) => {
   return (
-    <Wrapper p={["0 4px", "0 16px"]}>
-      <Inner>
+    <Wrapper p={["0 4px", "0 16px"]} style={wrapperStyle}>
+      <Inner style={innerStyle}>
         {Children.map(children, (child: ReactElement, index) => {
           const isActive = activeIndex === index;
           return cloneElement(child, {
