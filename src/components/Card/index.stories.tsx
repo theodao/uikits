@@ -64,7 +64,7 @@ export const CardHeader: React.FC = () => {
           <UIKitCardHeader>
             <Heading size="xl">Card Header</Heading>
           </UIKitCardHeader>
-          <CardBody>Body</CardBody>
+          <CardBody>Body BodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBody</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>
       </Row>

@@ -24,6 +24,9 @@ export const Default: React.FC = () => {
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum.
       </Message>
+      <Message variant="warning" mb="16px">
+        This is me my name
+      </Message>
     </>
   );
 };
