@@ -56,6 +56,10 @@ const BalanceText = styled.div`
   border-radius: 16px;
   color: ${({ theme }) => theme.colors.text};
   font-weight: 600;
+  display: none;
+  @media (min-width: 400px) {
+    display: block;
+  }
 `;
 
 const AccountButton = styled(Button)`
@@ -106,11 +110,9 @@ const UserBlock: React.FC<Props> = ({
       {account ? (
         chainId === queryChainId ? (
           <AccountElement>
-            {1 && (
-              <BalanceText>
-                {userEthBalance} {CurrenyMap[chainId]}
-              </BalanceText>
-            )}
+            <BalanceText>
+              {userEthBalance} {CurrenyMap[chainId]}
+            </BalanceText>
             <AccountButton
               scale="sm"
               variant="tertiary"
