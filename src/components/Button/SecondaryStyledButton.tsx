@@ -48,7 +48,7 @@ const SecondaryStyledButton = styled.button<BaseButtonProps>`
   border: 1px solid #FABC46;
   border-radius: 24px;
   cursor: pointer;
-  background: ${({ theme }) => theme.colors.cardBackgroundColor};
+  background: #353535;
   display: inline-flex;
   font-family: inherit;
   padding-top: 24px;
