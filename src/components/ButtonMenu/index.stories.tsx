@@ -3,6 +3,8 @@ import styled from "styled-components";
 /* eslint-disable import/no-unresolved */
 import { Meta } from "@storybook/react/types-6-0";
 import ButtonMenu from "./ButtonMenu";
+import SecondaryButtonMenu from "./SecondaryButtonMenu";
+import SecondaryButtonMenuItem from "./SecondaryMenuItem"
 import ButtonMenuItem from "./ButtonMenuItem";
 
 const Row = styled.div`
@@ -81,3 +83,18 @@ export const AsLinks: React.FC = () => {
     </Row>
   );
 };
+
+export const SecondaryItems: React.FC = () => {
+  return (
+    <Row>
+      <SecondaryButtonMenu activeIndex={1}>
+        <SecondaryButtonMenuItem>
+          OPENING POOLS
+        </SecondaryButtonMenuItem>
+        <SecondaryButtonMenuItem>
+          PREVIOUS POOLS
+        </SecondaryButtonMenuItem>
+      </SecondaryButtonMenu>
+    </Row>
+  )
+}

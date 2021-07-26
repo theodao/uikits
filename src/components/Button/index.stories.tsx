@@ -7,6 +7,7 @@ import Flex from "../Box/Flex";
 import { AddIcon, AutoRenewIcon, LogoIcon } from "../Svg";
 import IconButton from "./IconButton";
 import Button from "./Button";
+import SecondaryButton from "./SecondaryButton"
 import { ExpandableButton, ExpandableLabel } from "./ExpandableButton";
 import { scales, variants } from "./types";
 
@@ -27,9 +28,6 @@ const Row = styled(Flex)`
 export const Default: React.FC = () => {
   return (
     <>
-      <Box mb="32px">
-        <button type="button">Unstyled Button</button>
-      </Box>
       <Box mb="32px">
         {Object.values(variants).map((variant) => {
           return (
@@ -158,3 +156,11 @@ export const Expandable: React.FC = () => {
     </Box>
   );
 };
+
+export const SecondaryButtonPart: React.FC = () => {
+  return <Box width="640px">
+    <SecondaryButton>
+      Opening Pools
+    </SecondaryButton>
+  </Box>
+}
