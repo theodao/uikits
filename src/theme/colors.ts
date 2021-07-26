@@ -55,7 +55,7 @@ export const darkColors: Colors = {
   backgroundAlt: "#27262c",
   backgroundAlt2: "#383838",
   cardBorder: "#383241",
-  cardBackgroundColor: "#353535",
+  cardBackgroundColor: "#282828",
   contrast: "#FFFFFF",
   dropdown: "#1E1D20",
   dropdownDeep: "#100C18",
