@@ -11,7 +11,7 @@ export const Bar = styled.div<BarProps>`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: ${(props) => (props.primary ? props.theme.colors.primary : `${props.theme.colors.secondary}80`)};
+  background: linear-gradient(107.27deg, #F5BD6D -12.7%, #D76700 122.45%);
   height: 100%;
   transition: width 200ms ease;
 `;
