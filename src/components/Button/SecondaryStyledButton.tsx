@@ -51,6 +51,8 @@ const SecondaryStyledButton = styled.button<BaseButtonProps>`
   background: ${({ theme }) => theme.colors.cardBackgroundColor};
   display: inline-flex;
   font-family: inherit;
+  padding-top: 24px;
+  padding-bottom: 24px;
   font-size: 16px;
   font-weight: 400;
   justify-content: center;
