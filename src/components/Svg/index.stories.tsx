@@ -52,17 +52,6 @@ export const Icons: React.FC = () => {
             m="4px"
           >
             <Flex alignItems="center" justifyContent="center" style={{ flex: 1 }} height="100%">
-              <div style={{
-                width: '30px',
-                height: '30px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: 'red',
-                borderRadius: '50%',
-              }}>
-              <Icon width="24px" color="secondary" ml="4px" />
-              </div>
               <Icon width="48px" />
             </Flex>
             <Box py="4px">

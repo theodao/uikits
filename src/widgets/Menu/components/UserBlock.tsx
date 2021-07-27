@@ -54,7 +54,7 @@ const BalanceText = styled.div`
   padding: 0px 15px;
   cursor: unset;
   border-radius: 16px;
-  color: ${({ theme }) => theme.colors.text};
+  color: #353535;
   font-weight: 600;
   display: none;
   @media (min-width: 400px) {
@@ -65,7 +65,7 @@ const BalanceText = styled.div`
 const AccountButton = styled(Button)`
   cursor: pointer;
   z-index: 999;
-  color: ${({ theme }) => theme.colors.text};
+  color: #353535;
   :hover {
     background-color: ${({ theme }) => theme.colors.backgroundAlt};
     opacity: 1 !important;

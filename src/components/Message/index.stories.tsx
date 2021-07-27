@@ -1,5 +1,6 @@
 import React from "react";
 import Message from "./Message";
+import SecondaryMessage from "./SecondaryMessage";
 
 export default {
   title: "Components/Message",
@@ -27,6 +28,10 @@ export const Default: React.FC = () => {
       <Message variant="warning" mb="16px">
         This is me my name
       </Message>
+      <SecondaryMessage>
+        If you dont have any LUA or TOMO in your wallet, you will be in Tier 0. You still have a chance to buy token by
+        commit your fund. You will receive your fund if token sold out for Tier 1, 2, 3, 4
+      </SecondaryMessage>
     </>
   );
 };
