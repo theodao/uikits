@@ -19,11 +19,9 @@ const Container = styled.div`
 `;
 
 const SettingsEntry = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
   height: ${MENU_ENTRY_HEIGHT}px;
-  padding: 0 8px;
+  padding: 0 16px;
 `;
 
 const SocialEntry = styled.div`
@@ -32,6 +30,7 @@ const SocialEntry = styled.div`
   justify-content: space-between;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: 0 16px;
+  margin-bottom: 5px;
 `;
 
 const PanelFooter: React.FC<Props> = ({

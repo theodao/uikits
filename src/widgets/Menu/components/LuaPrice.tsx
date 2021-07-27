@@ -11,6 +11,11 @@ interface Props {
 const PriceLink = styled.a`
   display: flex;
   align-items: center;
+  background-color: #353535;
+  border-radius: 50px;
+  width: 50%;
+  padding: 14px;
+  margin-right: 4px;
   svg {
     transition: transform 0.3s;
   }

@@ -80,5 +80,7 @@ export { default as TwitterIcon } from "./Icons/Twitter";
 export { default as MediumIcon } from "./Icons/Medium";
 export { default as TelegramIcon } from "./Icons/Telegram";
 export { default as WorldIcon } from "./Icons/World";
+export { default as TranslateIcon } from "./Icons/TranslateIcon";
+export { default as DownIcon } from "./Icons/DownIcon";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

@@ -1,15 +1,19 @@
 import React from "react";
+import styled from 'styled-components'
 import { SvgProps } from "../../../components/Svg";
 import Text from "../../../components/Text/Text";
 import Dropdown from "../../../components/Dropdown/Dropdown";
 import Button from "../../../components/Button/Button";
-import * as IconModule from "../icons";
+import TranslateIcon from "../../../components/Svg/Icons/TranslateIcon";
 import { Language } from "../types";
 import MenuButton from "./MenuButton";
 
-const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
-const { LanguageIcon } = Icons;
-
+const ButtonWrapper = styled(Button)`
+  background-color: #353535;
+  border-radius: 50px;
+  padding: 14px;
+  width: 100%;
+`
 interface Props {
   currentLang: string;
   langs: Language[];
@@ -20,9 +24,9 @@ const LangSelector: React.FC<Props> = ({ currentLang, langs, setLang }) => (
   <Dropdown
     position="top-right"
     target={
-      <Button variant="text" startIcon={<LanguageIcon color="#FFFFFF" width="24px" />}>
+      <ButtonWrapper variant="text" startIcon={<TranslateIcon color="#FFFFFF" width="24px" />}>
         <Text color="#FFFFFF">{currentLang?.toUpperCase()}</Text>
-      </Button>
+      </ButtonWrapper>
     }
   >
     {langs.map((lang) => (
