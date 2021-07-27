@@ -67,7 +67,7 @@ const AccountModal: React.FC<Props> = ({
         </Title>
         <Button
           scale="sm"
-          variant="secondary"
+          color="#353535"
           disabled={!isMainNet || isUnlock}
           onClick={() => unlockLua()}
         >
