@@ -46,7 +46,7 @@ const MenuEntry = styled.div<Props>`
   }
 
   svg {
-    fill: #C3C3C3;
+    fill: ${({ isActive }) => (isActive ? "#FFFFFF" : "#C3C3C3")};
   }
 
   &:hover {
@@ -78,6 +78,6 @@ const LinkStatus = styled(Text)<{ color: keyof Colors }>`
   margin-left: 8px;
 `;
 
-const LinkLabelMemo = React.memo(LinkLabel, (prev, next) => prev.isPushed === next.isPushed);
+const LinkLabelMemo = React.memo(LinkLabel, (prev, next) => prev.isPushed === next.isPushed && prev.isActive === next.isActive);
 
 export { MenuEntry, LinkStatus, LinkLabelMemo as LinkLabel };
