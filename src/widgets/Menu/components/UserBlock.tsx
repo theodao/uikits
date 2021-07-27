@@ -66,8 +66,9 @@ const AccountButton = styled(Button)`
   cursor: pointer;
   z-index: 999;
   color: #353535;
+  background-color: #EFF4F5;
   :hover {
-    background-color: ${({ theme }) => theme.colors.backgroundAlt};
+    background-color: #FFFFFF;
     opacity: 1 !important;
   }
 
@@ -115,7 +116,6 @@ const UserBlock: React.FC<Props> = ({
             </BalanceText>
             <AccountButton
               scale="sm"
-              variant="tertiary"
               onClick={() => {
                 onPresentAccountModal();
               }}

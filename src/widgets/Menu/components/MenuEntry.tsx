@@ -8,6 +8,7 @@ export interface Props {
   secondary?: boolean;
   isActive?: boolean;
   theme: DefaultTheme;
+  isPushed: boolean;
 }
 
 const rainbowAnimation = keyframes`
@@ -20,8 +21,8 @@ const rainbowAnimation = keyframes`
   }
 `;
 
-const LinkLabel = styled.div<{ isPushed: boolean }>`
-  color: ${({ isPushed, theme }) => (isPushed ? theme.colors.textSubtle : "transparent")};
+const LinkLabel = styled.div<{ isPushed: boolean, isActive: boolean }>`
+  color: ${({ isPushed, isActive, theme }) => (isPushed ?  isActive ? "#FFFFFF" : "#C3C3C3": "transparent")};
   transition: color 0.4s;
   flex-grow: 1;
 `;
@@ -33,9 +34,9 @@ const MenuEntry = styled.div<Props>`
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
   font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
-  background-color: ${({ secondary, theme }) => (secondary ? theme.colors.background : "transparent")};
-  color: ${({ theme }) => theme.colors.textSubtle};
-  box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
+  background-color: ${({ isActive }) => (isActive ? "#1A1A1A" : "#282828")};
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 
   a {
     display: flex;
@@ -45,11 +46,11 @@ const MenuEntry = styled.div<Props>`
   }
 
   svg {
-    fill: ${({ theme }) => theme.colors.textSubtle};
+    fill: #C3C3C3;
   }
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.tertiary};
+    background-color: #1A1A1A;
   }
 
   // Safari fix
@@ -73,7 +74,7 @@ const LinkStatus = styled(Text)<{ color: keyof Colors }>`
   border: 2px solid;
   border-color: ${({ theme, color }) => theme.colors[color]};
   box-shadow: none;
-  color: ${({ theme, color }) => theme.colors[color]};
+  color: #C3C3C3;
   margin-left: 8px;
 `;
 

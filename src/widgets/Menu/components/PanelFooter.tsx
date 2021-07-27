@@ -14,7 +14,7 @@ interface Props extends PanelProps, PushedProps {}
 const Container = styled.div`
   flex: none;
   padding: 8px 4px;
-  background-color: ${({ theme }) => theme.nav.background};
+  background-color: #282828;
   border-top: solid 2px rgba(133, 133, 133, 0.1);
 `;
 
@@ -48,7 +48,7 @@ const PanelFooter: React.FC<Props> = ({
     return (
       <Container>
         <IconButton variant="text" onClick={() => pushNav(true)}>
-          <CogIcon />
+          <CogIcon color="#FFFFFF" />
         </IconButton>
       </Container>
     );
@@ -61,7 +61,6 @@ const PanelFooter: React.FC<Props> = ({
         <SocialLinks />
       </SocialEntry>
       <SettingsEntry>
-        <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
         <LangSelector currentLang={currentLang} langs={langs} setLang={setLang} />
       </SettingsEntry>
     </Container>

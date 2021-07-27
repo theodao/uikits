@@ -25,7 +25,7 @@ const CakePrice: React.FC<Props> = ({ luaPriceUsd }) => {
   return luaPriceUsd ? (
     <PriceLink href="https://info.luaswap.org/token/0xb1f66997a5760428d3a87d68b90bfe0ae64121cc" target="_blank">
       <PancakeRoundIcon />
-      <Text color="textSubtle" bold>{`$${luaPriceUsd.toFixed(3)}`}</Text>
+      <Text color="#FFFFFF" bold>{`$${luaPriceUsd.toFixed(3)}`}</Text>
     </PriceLink>
   ) : (
     <Skeleton width={80} height={24} />

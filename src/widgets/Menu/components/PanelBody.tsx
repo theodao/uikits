@@ -53,9 +53,9 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
             >
               {isPushed &&
                 entry.items.map((item) => (
-                  <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick}>
+                  <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick} isPushed={isPushed}>
                     <MenuLink href={item.href}>
-                      <LinkLabel isPushed={isPushed}>{item.label}</LinkLabel>
+                      <LinkLabel isPushed={isPushed} isActive={item.href === location.pathname}>{item.label}</LinkLabel>
                       {item.status && (
                         <LinkStatus color={item.status.color} fontSize="14px">
                           {item.status.text}
@@ -72,10 +72,11 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
             key={entry.label}
             isActive={entry.href === "/" ? entry.href === location.pathname : location.pathname.includes(entry.href)}
             className={calloutClass}
+            isPushed={isPushed}
           >
             <MenuLink href={entry.href} onClick={handleClick}>
               {iconElement}
-              <LinkLabel isPushed={isPushed}>{entry.label}</LinkLabel>
+              <LinkLabel isPushed={isPushed} isActive={entry.href === "/" ? entry.href === location.pathname : location.pathname.includes(entry.href)}>{entry.label}</LinkLabel>
               {entry.status && (
                 <LinkStatus color={entry.status.color} fontSize="14px">
                   {entry.status.text}
