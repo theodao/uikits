@@ -8,7 +8,7 @@ export interface Props {
   secondary?: boolean;
   isActive?: boolean;
   theme: DefaultTheme;
-  isPushed: boolean;
+  isPushed?: boolean;
 }
 
 const rainbowAnimation = keyframes`
@@ -21,7 +21,7 @@ const rainbowAnimation = keyframes`
   }
 `;
 
-const LinkLabel = styled.div<{ isPushed: boolean, isActive: boolean }>`
+const LinkLabel = styled.div<{ isPushed: boolean; isActive: boolean }>`
   color: ${({ isPushed, isActive, theme }) => (isPushed ?  isActive ? "#FFFFFF" : "#C3C3C3": "transparent")};
   transition: color 0.4s;
   flex-grow: 1;
