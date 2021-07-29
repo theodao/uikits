@@ -59,9 +59,6 @@ const PanelFooter: React.FC<Props> = ({
         <LuaPrice luaPriceUsd={luaPriceUsd} />
         <SocialLinks />
       </SocialEntry>
-      <SettingsEntry>
-        <LangSelector currentLang={currentLang} langs={langs} setLang={setLang} />
-      </SettingsEntry>
     </Container>
   );
 };
