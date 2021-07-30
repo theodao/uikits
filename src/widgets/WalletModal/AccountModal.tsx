@@ -32,7 +32,7 @@ const CommingSoon = styled.div`
   width: initial;
   font-size: 17px;
   font-weight: 500;
-  color: ${({ theme }) => theme.colors.textSubtle};
+  color: #c3c3c3;
 `;
 
 const AccountModal: React.FC<Props> = ({
