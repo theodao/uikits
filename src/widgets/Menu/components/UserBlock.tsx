@@ -47,6 +47,7 @@ const AccountElement = styled.div`
   border-radius: 16px;
   white-space: nowrap;
   width: 100%;
+  height: 100%;
 `;
 
 const BalanceText = styled.div`
@@ -56,10 +57,7 @@ const BalanceText = styled.div`
   border-radius: 16px;
   color: #353535;
   font-weight: 600;
-  display: none;
-  @media (min-width: 400px) {
-    display: block;
-  }
+  display: block;
 `;
 
 const AccountButton = styled(Button)`
@@ -67,6 +65,7 @@ const AccountButton = styled(Button)`
   z-index: 999;
   color: #353535;
   background-color: #EFF4F5;
+  display: none;
   :hover {
     background-color: #FFFFFF;
     opacity: 1 !important;
@@ -75,6 +74,10 @@ const AccountButton = styled(Button)`
   :active {
     opacity: 0.65;
   }
+
+  @media (min-width: 400px) {
+    display: block;
+  }
 `;
 interface CurrenyMapType {
   [key: number]: string;
@@ -82,6 +85,7 @@ interface CurrenyMapType {
 
 const CurrenyMap: CurrenyMapType = {
   88: "TOMO",
+  89: "TOMO",
   1: "ETH",
 };
 
