@@ -1,6 +1,7 @@
 import React from "react";
 import Message from "./Message";
 import SecondaryMessage from "./SecondaryMessage";
+import TertiaryMessage from "./TertiaryMessage";
 
 export default {
   title: "Components/Message",
@@ -32,6 +33,14 @@ export const Default: React.FC = () => {
         If you dont have any LUA or TOMO in your wallet, you will be in Tier 0. You still have a chance to buy token by
         commit your fund. You will receive your fund if token sold out for Tier 1, 2, 3, 4
       </SecondaryMessage>
+      <TertiaryMessage
+        hoverContent="The following types of assets on both Ethereum and TomoChain will be taken into account for tier qualification:
+- LUA staked in LuaSafe
+- LUA staked in LUA -TOMO(E) pools (with a multiple of 2)"
+        hoverPlacement="left"
+      >
+        Tier Requirement: 5,000 LUA
+      </TertiaryMessage>
     </>
   );
 };
