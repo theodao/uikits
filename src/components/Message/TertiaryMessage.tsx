@@ -16,7 +16,7 @@ const TertiaryMessage: React.FC<TertiaryMessageProps> = ({ children, hoverConten
     tooltipVisible: tooltipVisibleHover,
     targetRef: targetRefHover,
     tooltip: tooltipHover,
-  } = useTooltip('Hovering: \n -Dumpster', { placement: hoverPlacement, trigger: "hover" });
+  } = useTooltip(hoverContent, { placement: hoverPlacement, trigger: "hover" });
 
   return (
     <Flex {...props} alignItems="center">
