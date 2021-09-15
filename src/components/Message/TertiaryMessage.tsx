@@ -9,20 +9,21 @@ import { TertiaryMessageProps } from './types'
 const StyledIcon = styled(SecondaryInfoIcon)`
   cursor: pointer;
 `
+const StyledSpan = styled.span``
 
 const TertiaryMessage: React.FC<TertiaryMessageProps> = ({ children, hoverContent, hoverPlacement, ...props }) => {
   const {
     tooltipVisible: tooltipVisibleHover,
     targetRef: targetRefHover,
     tooltip: tooltipHover,
-  } = useTooltip(hoverContent, { placement: hoverPlacement, trigger: "hover" });
+  } = useTooltip('Hovering: \n -Dumpster', { placement: hoverPlacement, trigger: "hover" });
 
   return (
     <Flex {...props} alignItems="center">
       {children}
-      <Box ref={targetRefHover}>
+      <StyledSpan ref={targetRefHover}>
         <StyledIcon ml="10px" />
-      </Box>
+      </StyledSpan>
       {tooltipVisibleHover && tooltipHover}
     </Flex>
   );

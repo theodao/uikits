@@ -22,6 +22,7 @@ export const StyledTooltip = styled.div`
   font-size: 16px;
   line-height: 130%;
   border-radius: 16px;
+  white-space: pre-line;
   max-width: 320px;
   z-index: 101;
   background: #1a1a1a;
