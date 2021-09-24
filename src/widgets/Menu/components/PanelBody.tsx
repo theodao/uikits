@@ -73,7 +73,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
             className={calloutClass}
             isPushed={isPushed}
           >
-            <MenuLink href={entry.href} onClick={handleClick}>
+            <MenuLink href={entry.href} onClick={handleClick} target="_blank">
               {iconElement}
               <LinkLabel isPushed={isPushed} isActive={entry.href === "/" ? entry.href === location.pathname : location.pathname.includes(entry.href)}>{entry.label}</LinkLabel>
               {entry.status && (

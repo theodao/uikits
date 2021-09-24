@@ -19,3 +19,7 @@ export { default as TicketIcon } from "./Ticket";
 export { default as TradeIcon } from "./Trade";
 export { default as TwitterIcon } from "./Twitter";
 export { default as UnionIcon } from "./Union";
+export { default as OrderIcon } from "./Order";
+export { default as VaultIcon } from "./Vault";
+
+
