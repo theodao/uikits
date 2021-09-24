@@ -53,7 +53,7 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               {isPushed &&
                 entry.items.map((item) => (
                   <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick} isPushed={isPushed}>
-                    <MenuLink href={item.href}>
+                    <MenuLink href={item.href} target="_blank">
                       <LinkLabel isPushed={isPushed} isActive={item.href === location.pathname}>{item.label}</LinkLabel>
                       {item.status && (
                         <LinkStatus color={item.status.color} fontSize="14px">
