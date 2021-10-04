@@ -87,6 +87,7 @@ const CurrenyMap: CurrenyMapType = {
   88: "TOMO",
   89: "TOMO",
   1: "ETH",
+  56: "BNB"
 };
 
 const UserBlock: React.FC<Props> = ({
