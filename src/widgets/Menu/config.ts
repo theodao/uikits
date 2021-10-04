@@ -36,7 +36,7 @@ export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.TOMOCHAIN_MAINNET]: 'TomoChain',
   [ChainId.TOMOCHAIN_DEVNET]: 'TomoDevnet',
   [ChainId.TOMOCHAIN_TESTNET]: 'TomoTestnet',
-  [ChainId.BINANCE_SMART_CHAIN]: 'BSC'
+  [ChainId.BINANCE_SMART_CHAIN]: 'BinanceSmartChain'
 }
 
 export const links = [
