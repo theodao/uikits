@@ -112,13 +112,19 @@ const UserBlock: React.FC<Props> = ({
   return (
     <div>
       {account ? (
-        <Web3StatusError
-          onClick={() => {
-            onPresentWrongNetworkModal();
-          }}
-        >
-          Wrong Network
-        </Web3StatusError>
+        <AccountElement>
+          <BalanceText>
+            {userEthBalance} {CurrenyMap[chainId]}
+          </BalanceText>
+          <AccountButton
+            scale="sm"
+            onClick={() => {
+              onPresentAccountModal();
+            }}
+          >
+            {accountEllipsis}
+          </AccountButton>
+        </AccountElement>
       ) : (
         <Button
           scale="sm"
