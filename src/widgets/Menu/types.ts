@@ -73,7 +73,6 @@ export interface NavProps extends PanelProps {
   login: Login;
   profile?: Profile;
   chainId: ChainId;
-  queryChainId: ChainId;
   accountData: {
     luaUnlockAble: string;
     totalLuaLock: string;

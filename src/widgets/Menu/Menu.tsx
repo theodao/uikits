@@ -102,7 +102,6 @@ const Menu: React.FC<NavProps> = ({
   isDark,
   toggleTheme,
   chainId,
-  queryChainId,
   connectNetwork,
   langs,
   setLang,
@@ -190,7 +189,6 @@ const Menu: React.FC<NavProps> = ({
             login={login}
             logout={logout}
             chainId={chainId}
-            queryChainId={queryChainId}
             userEthBalance={userEthBalance}
             accountData={accountData}
             unlockLua={unlockLua}

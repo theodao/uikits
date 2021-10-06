@@ -9,7 +9,6 @@ interface Props {
   login: Login;
   logout: () => void;
   chainId: number;
-  queryChainId: number;
   userEthBalance: number | string;
   accountData: {
     luaUnlockAble: string;
@@ -64,10 +63,10 @@ const AccountButton = styled(Button)`
   cursor: pointer;
   z-index: 999;
   color: #353535;
-  background-color: #EFF4F5;
+  background-color: #eff4f5;
   display: none;
   :hover {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     opacity: 1 !important;
   }
 
@@ -87,7 +86,7 @@ const CurrenyMap: CurrenyMapType = {
   88: "TOMO",
   89: "TOMO",
   1: "ETH",
-  56: "BNB"
+  56: "BNB",
 };
 
 const UserBlock: React.FC<Props> = ({
@@ -95,7 +94,6 @@ const UserBlock: React.FC<Props> = ({
   login,
   logout,
   chainId,
-  queryChainId,
   userEthBalance,
   accountData,
   unlockLua,
@@ -108,35 +106,19 @@ const UserBlock: React.FC<Props> = ({
     accountData,
     chainId,
     unlockLua,
-    isUnlock,
+    isUnlock
   );
   const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
   return (
     <div>
       {account ? (
-        chainId === queryChainId ? (
-          <AccountElement>
-            <BalanceText>
-              {userEthBalance} {CurrenyMap[chainId]}
-            </BalanceText>
-            <AccountButton
-              scale="sm"
-              onClick={() => {
-                onPresentAccountModal();
-              }}
-            >
-              {accountEllipsis}
-            </AccountButton>
-          </AccountElement>
-        ) : (
-          <Web3StatusError
-            onClick={() => {
-              onPresentWrongNetworkModal();
-            }}
-          >
-            Wrong Network
-          </Web3StatusError>
-        )
+        <Web3StatusError
+          onClick={() => {
+            onPresentWrongNetworkModal();
+          }}
+        >
+          Wrong Network
+        </Web3StatusError>
       ) : (
         <Button
           scale="sm"

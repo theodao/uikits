@@ -21,5 +21,6 @@ export { default as TwitterIcon } from "./Twitter";
 export { default as UnionIcon } from "./Union";
 export { default as OrderIcon } from "./Order";
 export { default as VaultIcon } from "./Vault";
+export { default as ListView } from './ListView';
 
 
