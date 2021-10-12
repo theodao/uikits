@@ -4,7 +4,7 @@ import { SvgProps } from "../types";
 
 const SecondaryInfo: React.FC<SvgProps> = (props) => {
   return (
-    <Svg width="18" height="18" fill="none" viewBox="0 0 18 18" {...props}>
+    <Svg width="23" height="23" fill="none" viewBox="0 0 20 16" {...props}>
       <path
         fill="#8B8B8B"
         fillRule="evenodd"
