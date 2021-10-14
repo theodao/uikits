@@ -24,6 +24,7 @@ export enum ChainId {
   TOMOCHAIN_DEVNET = 99,
   TOMOCHAIN_TESTNET = 89,
   TOMOCHAIN_MAINNET = 88,
+  BINANCE_SMART_CHAIN = 56
 }
 
 export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
@@ -35,6 +36,7 @@ export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.TOMOCHAIN_MAINNET]: 'TomoChain',
   [ChainId.TOMOCHAIN_DEVNET]: 'TomoDevnet',
   [ChainId.TOMOCHAIN_TESTNET]: 'TomoTestnet',
+  [ChainId.BINANCE_SMART_CHAIN]: 'BinanceSmartChain'
 }
 
 export const links = [
@@ -195,6 +197,16 @@ export const supportedWalletOption: NetworkOption[] = [
       decimals: 18,
     }
   },
+  {
+    chainId: 56,
+    name: 'BinanceSmartChain',
+    chainName: 'Binance Smart Chain Mainnet',
+    nativeCurrency: {
+      name: 'BNB',
+      symbol: 'bnb',
+      decimals: 18,
+    }
+  }
 ]
 
 export const MENU_HEIGHT = 64;
