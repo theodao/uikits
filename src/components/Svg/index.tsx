@@ -11,6 +11,7 @@ export { default as BlockIcon } from "./Icons/Block";
 export { default as BnbUsdtPairTokenIcon } from "./Icons/BnbUsdtPairToken";
 export { default as BunnyCardsIcon } from "./Icons/BunnyCards";
 export { default as BunnyPlaceholderIcon } from "./Icons/BunnyPlaceholder";
+export { default as CalendarIcon } from "./Icons/CalendarIcon";
 export { default as Cards } from "./Icons/Cards";
 export { default as CardViewIcon } from "./Icons/CardView";
 export { default as CalculateIcon } from "./Icons/Calculate";
