@@ -32,8 +32,8 @@ const NetworkOptionStyle = styled.div`
 export const YellowCard = styled.div`
   box-sizing: border-box;
   margin: 0px 5px 0px 0px;
-  background-color: rgba(243, 132, 30, 0.05);
-  color: rgb(243, 132, 30);
+  background-color: rgba(225, 169, 63, 0.3);
+  color: #fabc46;
   font-weight: 600;
   border-radius: 16px;
   padding: 8px 16px;
