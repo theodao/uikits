@@ -37,6 +37,7 @@ export const YellowCard = styled.div`
   color: #fabc46;
   font-weight: 600;
   border-radius: 16px;
+  height: 100%;
   font-size: 14px;
   padding: 8px 16px;
   transition: background-color 0.2s, opacity 0.2s;
