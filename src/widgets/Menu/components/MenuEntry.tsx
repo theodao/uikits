@@ -29,6 +29,7 @@ const LinkLabel = styled.div<{ isPushed: boolean; isActive: boolean }>`
 
 const MenuEntry = styled.div<Props>`
   cursor: pointer;
+  position: relative;
   display: flex;
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
@@ -37,8 +38,8 @@ const MenuEntry = styled.div<Props>`
   line-heigh: 24px;
   background-color: ${({ isActive }) => (isActive ? "#1A1A1A" : "#282828")};
   font-weight: ${({ isActive }) => (isActive ? "600" : "400")};
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
+  border-top-right-radius: ${({ isActive }) => (isActive ? "50px" : "0px")};
+  border-bottom-right-radius: ${({ isActive }) => (isActive ? "50px" : "0px")};
 
   a {
     display: flex;

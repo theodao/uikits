@@ -28,7 +28,6 @@ const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHei
   overflow: hidden;
   border-color: ${({ isOpen, isPushed }) => (isOpen && isPushed ? "rgba(133, 133, 133, 0.1)" : "transparent")};
   border-style: solid;
-  border-width: 1px 0;
 `;
 
 const Accordion: React.FC<Props> = ({
