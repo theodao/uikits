@@ -38,8 +38,6 @@ const MenuEntry = styled.div<Props>`
   line-heigh: 24px;
   background-color: ${({ isActive }) => (isActive ? "#1A1A1A" : "#282828")};
   font-weight: ${({ isActive }) => (isActive ? "600" : "400")};
-  border-top-right-radius: ${({ isActive }) => (isActive ? "50px" : "0px")};
-  border-bottom-right-radius: ${({ isActive }) => (isActive ? "50px" : "0px")};
 
   a {
     display: flex;
