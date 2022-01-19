@@ -33,8 +33,10 @@ const MenuEntry = styled.div<Props>`
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
-  font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
+  font-size: ${({ secondary }) => (secondary ? "13px" : "14px")};;
+  line-heigh: 24px;
   background-color: ${({ isActive }) => (isActive ? "#1A1A1A" : "#282828")};
+  font-weight: ${({ isActive }) => (isActive ? "600" : "400")};
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
 

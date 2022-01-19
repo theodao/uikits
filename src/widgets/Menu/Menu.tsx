@@ -27,6 +27,7 @@ const Wrapper = styled.div`
 const NetworkOptionStyle = styled.div`
   cursor: pointer;
   padding: 5px 0px;
+  font-size: 14px;
 `;
 
 export const YellowCard = styled.div`
@@ -36,6 +37,7 @@ export const YellowCard = styled.div`
   color: #fabc46;
   font-weight: 600;
   border-radius: 16px;
+  font-size: 14px;
   padding: 8px 16px;
   transition: background-color 0.2s, opacity 0.2s;
   cursor: pointer;

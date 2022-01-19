@@ -40,6 +40,7 @@ const Web3StatusError = styled(Button)`
 
 const AccountElement = styled.div`
   display: flex;
+  font-size: 14px;
   flex-direction: row;
   align-items: center;
   background-color: #fbbb44;
@@ -57,6 +58,7 @@ const BalanceText = styled.div`
   color: #353535;
   font-weight: 600;
   display: block;
+  font-size: 14px;
 `;
 
 const AccountButton = styled(Button)`
