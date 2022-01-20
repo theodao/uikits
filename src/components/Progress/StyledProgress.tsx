@@ -5,13 +5,14 @@ import { ProgressProps, variants } from "./types";
 
 interface BarProps {
   primary?: boolean;
+  colorBar?: ProgressProps["colorBar"];
 }
 
 export const Bar = styled.div<BarProps>`
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(107.27deg, #F5BD6D -12.7%, #D76700 122.45%);
+  background: ${({ colorBar }) => (colorBar || "linear-gradient(107.27deg, #F5BD6D -12.7%, #D76700 122.45%)")};
   height: 100%;
   transition: width 200ms ease;
 `;
@@ -23,11 +24,12 @@ Bar.defaultProps = {
 interface StyledProgressProps {
   variant: ProgressProps["variant"];
   scale: ProgressProps["scale"];
+  colorBackground?: ProgressProps["colorBackground"];
 }
 
 const StyledProgress = styled.div<StyledProgressProps>`
   position: relative;
-  background-color: #606060;
+  background-color: ${({ colorBackground }) => (colorBackground || "#606060")};
   box-shadow: ${({ theme }) => theme.shadows.inset};
   overflow: hidden;
 
