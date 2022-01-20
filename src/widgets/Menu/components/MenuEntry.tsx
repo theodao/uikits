@@ -49,7 +49,7 @@ const MenuEntry = styled.div<Props>`
     z-index: 9999;
     border-bottom-right-radius: 50px;
     background-color: transparent;
-    box-shadow: 7px 8px 0 0 #1a1a1a;
+    box-shadow: 7px 5px 0px 1px #1a1a1a;
     top: -24px;
     right: 0px;
     position: absolute;
@@ -63,7 +63,7 @@ const MenuEntry = styled.div<Props>`
     z-index: 9999;
     border-top-right-radius: 50px;
     background-color: transparent;
-    box-shadow: 7px -8px 0 0 #1a1a1a;
+    box-shadow: 7px -5px 0px 1px #1a1a1a;
     bottom: -24px;
     right: 0px;
     position: absolute;
