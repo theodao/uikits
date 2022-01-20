@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { SvgProps } from "../../../components/Svg";
@@ -26,10 +26,11 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
   const location = useLocation();
   // Close the menu when a user clicks a link on mobile
   const handleClick = isMobile ? () => pushNav(false) : undefined;
+  const [hoverIndex, setHoverIndex] = useState<Number>(-1);
 
   return (
     <Container>
-      {links.map((entry) => {
+      {links.map((entry, index) => {
         const Icon = Icons[entry.icon];
         const iconElement = <Icon width="24px" mr="8px" />;
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
@@ -51,10 +52,18 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
               isActive={entry.items.some((item) => item.href === location.pathname)}
             >
               {isPushed &&
-                entry.items.map((item) => (
-                  <MenuEntry key={item.href} secondary isActive={item.href === location.pathname} onClick={handleClick} isPushed={isPushed}>
-                    <MenuLink href={item.href} target={entry.isOpenNewTab ? '_blank' : '_self'}>
-                      <LinkLabel isPushed={isPushed} isActive={item.href === location.pathname}>{item.label}</LinkLabel>
+                entry.items.map((item, index) => (
+                  <MenuEntry
+                    key={item.href}
+                    secondary
+                    isActive={item.href === location.pathname}
+                    onClick={handleClick}
+                    isPushed={isPushed}
+                  >
+                    <MenuLink href={item.href} target={entry.isOpenNewTab ? "_blank" : "_self"}>
+                      <LinkLabel isPushed={isPushed} isActive={item.href === location.pathname}>
+                        {item.label}
+                      </LinkLabel>
                       {item.status && (
                         <LinkStatus color={item.status.color} fontSize="14px">
                           {item.status.text}
@@ -72,10 +81,24 @@ const PanelBody: React.FC<Props> = ({ isPushed, pushNav, isMobile, links }) => {
             isActive={entry.href === "/" ? entry.href === location.pathname : location.pathname.includes(entry.href)}
             className={calloutClass}
             isPushed={isPushed}
+            isHovered={hoverIndex === index}
+            onMouseEnter={() => {
+              setHoverIndex(index);
+            }}
+            onMouseLeave={() => {
+              setHoverIndex(-1);
+            }}
           >
-            <MenuLink href={entry.href} onClick={handleClick} target={entry.isOpenNewTab ? '_blank' : '_self'}>
+            <MenuLink href={entry.href} onClick={handleClick} target={entry.isOpenNewTab ? "_blank" : "_self"}>
               {iconElement}
-              <LinkLabel isPushed={isPushed} isActive={entry.href === "/" ? entry.href === location.pathname : location.pathname.includes(entry.href)}>{entry.label}</LinkLabel>
+              <LinkLabel
+                isPushed={isPushed}
+                isActive={
+                  entry.href === "/" ? entry.href === location.pathname : location.pathname.includes(entry.href)
+                }
+              >
+                {entry.label}
+              </LinkLabel>
               {entry.status && (
                 <LinkStatus color={entry.status.color} fontSize="14px">
                   {entry.status.text}

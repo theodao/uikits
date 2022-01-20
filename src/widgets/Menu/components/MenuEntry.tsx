@@ -9,6 +9,7 @@ export interface Props {
   isActive?: boolean;
   theme: DefaultTheme;
   isPushed?: boolean;
+  isHovered?: boolean;
 }
 
 const rainbowAnimation = keyframes`
@@ -22,7 +23,7 @@ const rainbowAnimation = keyframes`
 `;
 
 const LinkLabel = styled.div<{ isPushed: boolean; isActive: boolean }>`
-  color: ${({ isPushed, isActive, theme }) => (isPushed ?  isActive ? "#FFFFFF" : "#C3C3C3": "transparent")};
+  color: ${({ isPushed, isActive, theme }) => (isPushed ? (isActive ? "#FFFFFF" : "#C3C3C3") : "transparent")};
   transition: color 0.4s;
   flex-grow: 1;
 `;
@@ -34,10 +35,40 @@ const MenuEntry = styled.div<Props>`
   align-items: center;
   height: ${MENU_ENTRY_HEIGHT}px;
   padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
-  font-size: ${({ secondary }) => (secondary ? "13px" : "14px")};;
+  font-size: ${({ secondary }) => (secondary ? "13px" : "14px")};
   line-heigh: 24px;
   background-color: ${({ isActive }) => (isActive ? "#1A1A1A" : "#282828")};
   font-weight: ${({ isActive }) => (isActive ? "600" : "400")};
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+
+  &::before {
+    display: ${({ isActive, isHovered }) => (isActive || isHovered ? "block" : "none")};
+    width: 25px;
+    height: 25px;
+    z-index: 9999;
+    border-bottom-right-radius: 50px;
+    background-color: transparent;
+    box-shadow: 7px 8px 0 0 #1a1a1a;
+    top: -24px;
+    right: 0px;
+    position: absolute;
+    content: "";
+  }
+
+  &::after {
+    display: ${({ isActive, isHovered }) => (isActive || isHovered ? "block" : "none")};
+    width: 25px;
+    height: 25px;
+    z-index: 9999;
+    border-top-right-radius: 50px;
+    background-color: transparent;
+    box-shadow: 7px -8px 0 0 #1a1a1a;
+    bottom: -24px;
+    right: 0px;
+    position: absolute;
+    content: "";
+  }
 
   a {
     display: flex;
@@ -51,7 +82,7 @@ const MenuEntry = styled.div<Props>`
   }
 
   &:hover {
-    background-color: #1A1A1A;
+    background-color: #1a1a1a;
   }
 
   // Safari fix
@@ -75,10 +106,13 @@ const LinkStatus = styled(Text)<{ color: keyof Colors }>`
   border: 2px solid;
   border-color: ${({ theme, color }) => theme.colors[color]};
   box-shadow: none;
-  color: #C3C3C3;
+  color: #c3c3c3;
   margin-left: 8px;
 `;
 
-const LinkLabelMemo = React.memo(LinkLabel, (prev, next) => prev.isPushed === next.isPushed && prev.isActive === next.isActive);
+const LinkLabelMemo = React.memo(
+  LinkLabel,
+  (prev, next) => prev.isPushed === next.isPushed && prev.isActive === next.isActive
+);
 
 export { MenuEntry, LinkStatus, LinkLabelMemo as LinkLabel };
