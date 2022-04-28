@@ -26,7 +26,8 @@ export enum ChainId {
   TOMOCHAIN_MAINNET = 88,
   BINANCE_SMART_CHAIN = 56,
   BSC_TESTNET = 97,
-  AVX_NETWORK = 43114
+  AVX_NETWORK = 43114,
+  AVX_TESTNET = 43113
 }
 
 export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
@@ -40,6 +41,7 @@ export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.TOMOCHAIN_TESTNET]: 'TomoTestnet',
   [ChainId.BINANCE_SMART_CHAIN]: 'BinanceSmartChain',
   [ChainId.AVX_NETWORK]: 'AvalancheMainnet',
+  [ChainId.AVX_TESTNET]: 'AvalancheTestnet',
   [ChainId.BSC_TESTNET]: 'BSCTestNet'
 }
 
