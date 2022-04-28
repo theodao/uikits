@@ -39,7 +39,7 @@ export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.TOMOCHAIN_DEVNET]: 'TomoDevnet',
   [ChainId.TOMOCHAIN_TESTNET]: 'TomoTestnet',
   [ChainId.BINANCE_SMART_CHAIN]: 'BinanceSmartChain',
-  [ChainId.AVX_NETWORK]: 'Avalanche Mainnet',
+  [ChainId.AVX_NETWORK]: 'AvalancheMainnet',
   [ChainId.BSC_TESTNET]: 'BSCTestNet'
 }
 
