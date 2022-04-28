@@ -26,6 +26,7 @@ export enum ChainId {
   TOMOCHAIN_MAINNET = 88,
   BINANCE_SMART_CHAIN = 56,
   BSC_TESTNET = 97,
+  AVX_NETWORK = 43114
 }
 
 export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
@@ -38,6 +39,7 @@ export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.TOMOCHAIN_DEVNET]: 'TomoDevnet',
   [ChainId.TOMOCHAIN_TESTNET]: 'TomoTestnet',
   [ChainId.BINANCE_SMART_CHAIN]: 'BinanceSmartChain',
+  [ChainId.AVX_NETWORK]: 'Avalanche Mainnet',
   [ChainId.BSC_TESTNET]: 'BSCTestNet'
 }
 
@@ -206,6 +208,16 @@ export const supportedWalletOption: NetworkOption[] = [
     nativeCurrency: {
       name: 'BNB',
       symbol: 'bnb',
+      decimals: 18,
+    }
+  },
+  {
+    chainId: 43114,
+    name: 'AvalancheMainnet',
+    chainName: 'Avalanche Mainnet',
+    nativeCurrency: {
+      name: 'AVAX',
+      symbol: 'avax',
       decimals: 18,
     }
   }
