@@ -81,11 +81,11 @@ export const links = [
     icon: "TicketIcon",
     href: "/lottery",
   },
-  // {
-  //   label: "NFT",
-  //   icon: "NftIcon",
-  //   href: "/nft",
-  // },
+  {
+    label: "NFT",
+    icon: "NftIcon",
+    href: "/nft",
+  },
   {
     label: "Team Battle",
     icon: "TeamBattleIcon",
